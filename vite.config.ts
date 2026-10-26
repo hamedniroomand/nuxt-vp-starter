@@ -5,6 +5,7 @@ export default defineConfig({
     '*': 'vp check --fix',
   },
   fmt: {
+    ignorePatterns: ['void.lock.json'],
     arrowParens: 'avoid',
     sortTailwindcss: true,
     experimentalOperatorPosition: 'end',

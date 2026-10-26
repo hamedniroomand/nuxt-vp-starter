@@ -22,3 +22,10 @@ logs
 .env
 .env.*
 !.env.example
+server/middleware/__void-dev-trigger.ts
+
+# Void and Cloudflare local state
+.void
+.wrangler
+.void-wrangler.jsonc
+void.lock.json
