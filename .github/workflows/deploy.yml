@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Run one deploy at a time. Do not stop a deploy that has started.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    uses: $/.github/workflows/verify.yml
+    with:
+      upload-output: true
+
+  # To deploy, add a job here with `needs: verify`.
+  # Download the `nuxt-output` artifact to `.output`, then deploy it to your host.
