@@ -1,5 +1,6 @@
 allowBuilds:
   esbuild: false
+  vue-demi: false
 
 catalog:
   vite: npm:@voidzero-dev/vite-plus-core@1.4.0
